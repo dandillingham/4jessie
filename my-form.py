@@ -1,13 +1,12 @@
 from flask import Flask
 from flask import request
 from flask import render_template
-import stringComparison
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder=".")
 
 @app.route('/')
 def my_form():
-    return render_template("index.html") # this should be the name of your html file
+    return render_template("index.html")   # this should be the name of your html file
 
 @app.route('/', methods=['POST'])
 def my_form_post():
@@ -16,9 +15,9 @@ def my_form_post():
     last_name = request.form['lname']
     date_of_birth = request.form['dob']
 
-    print (request.form)
+    print (request.form, flush=True)
 
-    return "<h1>Data submitted!</h1>"
+    return "<h1>Form submitted!</h1>"
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0", port=8080)
