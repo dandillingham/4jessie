@@ -15,6 +15,9 @@ def my_form_post():
     last_name = request.form['lname']
     date_of_birth = request.form['dob']
 
+    print (first_name, flush=True)
+    print (last_name, flush=True)
+    print (date_of_birth, flush=True)
     print (request.form, flush=True)
 
     return "<h1>Form submitted!</h1>"
