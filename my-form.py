@@ -16,6 +16,8 @@ def my_form_post():
     last_name = request.form['lname']
     date_of_birth = request.form['dob']
 
+    print (request.form)
+
     return "<h1>Data submitted!</h1>"
 
 if __name__ == '__main__':
