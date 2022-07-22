@@ -5,18 +5,14 @@
 
 # .dump
 
-
-
-
-
 FROM ubuntu 
 
 RUN apt-get update -y
 RUN apt-get install sqlite3 python3-pip -y
 RUN pip3 install flask 
 
-COPY . /
-WORKDIR /
+COPY . /working
+WORKDIR /working
 
 EXPOSE 8080
 
